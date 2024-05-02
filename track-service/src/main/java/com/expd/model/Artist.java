@@ -8,6 +8,13 @@ public class Artist {
     private Genre genre;
 
     public Artist(){}
+
+    public Artist(int id, String name, String nationality, Genre genre) {
+        this.id = id;
+        this.name = name;
+        this.nationality = nationality;
+        this.genre = genre;
+    }
     public Artist(String name, String nationality, Genre genre) {
         this.name = name;
         this.nationality = nationality;

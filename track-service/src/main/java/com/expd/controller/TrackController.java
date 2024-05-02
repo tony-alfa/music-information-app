@@ -24,7 +24,10 @@ public class TrackController {
 
     @GetMapping
     public ResponseEntity<?> getAll(){
-        return ResponseEntity.ok(trackService.getAll().stream().map(track -> TrackResponseDTO.fromTrack(track, pricingProvider.getPricing(track.getId()))).toList());
+        return ResponseEntity.ok(
+                trackService.getAll()
+                        .stream()
+                        .map(track -> TrackResponseDTO.fromTrack(track, pricingProvider.getPricing(track.getId()))).toList());
     }
     @GetMapping("/{id}")
     public ResponseEntity<?> getById(@PathVariable int id){

@@ -1,0 +1,5 @@
+services:
+  pricing-service:
+    image: pricing-service-0.0.1
+    ports:
+      - '8081:8081'

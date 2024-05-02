@@ -2,12 +2,14 @@ package com.expd.service;
 
 import com.expd.model.Artist;
 import com.expd.model.Track;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
 public class RegistrationService {
+
     private TrackService trackService;
     private ArtistService artistService;
 
@@ -28,6 +30,5 @@ public class RegistrationService {
         Artist artist = artistService.getById(artistId);
         return tracks.stream().filter(track -> track.getArtists().contains(artist)).toList();
     }
-
 
 }
